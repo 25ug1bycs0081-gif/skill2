@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CityCare Hospital</title>
+    <meta
+      name="description"
+      content="Modern hospital management website for appointments, departments, doctors, and patient care."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="hospital-styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <span>Emergency: +91 98765 43210</span>
+        <span>Open 24/7 | Trusted Care</span>
+      </div>
+    </header>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <div class="brand">
+          <div class="brand-mark">+</div>
+          <div>
+            <span class="brand-name">CityCare</span>
+            <small>Hospital</small>
+          </div>
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#doctors">Doctors</a>
+          <a href="#appointments">Appointments</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#appointments" class="btn btn-primary">Book Appointment</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow">Compassionate care, advanced treatment</p>
+            <h1>Healthcare that feels personal.</h1>
+            <p class="lead">
+              We combine advanced medical expertise with a patient-first approach to deliver trusted care for every stage of life.
+            </p>
+            <div class="hero-actions">
+              <a href="#appointments" class="btn btn-primary">Book Now</a>
+              <a href="#services" class="btn btn-secondary">Our Services</a>
+            </div>
+
+            <div class="hero-stats">
+              <div>
+                <strong>25k+</strong>
+                <span>Patients cared for</span>
+              </div>
+              <div>
+                <strong>40+</strong>
+                <span>Specialists</span>
+              </div>
+              <div>
+                <strong>99%</strong>
+                <span>Care satisfaction</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <h2>Need quick care?</h2>
+            <div class="info-box">
+              <span>Fast track</span>
+              <strong>Emergency & urgent care</strong>
+            </div>
+            <ul>
+              <li>24/7 emergency support</li>
+              <li>Same-day consultation</li>
+              <li>Modern ICU and diagnostics</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section about">
+        <div class="container about-grid">
+          <div class="about-image">
+            <div class="image-main"></div>
+            <div class="image-small"></div>
+          </div>
+
+          <div class="about-copy">
+            <p class="eyebrow">About us</p>
+            <h2>Trusted hospital care with a human touch.</h2>
+            <p>
+              CityCare Hospital is a multi-specialty healthcare center focused on providing high-quality treatment, patient comfort, and clinical excellence in a warm and supportive environment.
+            </p>
+            <p>
+              Our multidisciplinary teams work together to provide personalized care across cardiology, orthopaedics, maternity, pediatrics, surgery, diagnostics, and rehabilitation.
+            </p>
+
+            <div class="about-points">
+              <div>
+                <strong>Our Mission</strong>
+                <span>To deliver compassionate, technology-driven healthcare that improves lives.</span>
+              </div>
+              <div>
+                <strong>Our Vision</strong>
+                <span>To become the region’s most trusted center for advanced, preventive, and patient-centered care.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section services">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Our services</p>
+            <h2>Complete care under one roof.</h2>
+          </div>
+
+          <div class="service-grid">
+            <article class="service-card">
+              <div class="icon">🩺</div>
+              <h3>General Medicine</h3>
+              <p>Preventive consultations and chronic disease management by experienced physicians.</p>
+            </article>
+            <article class="service-card">
+              <div class="icon">💓</div>
+              <h3>Cardiology</h3>
+              <p>Comprehensive heart care with diagnostics, monitoring, and advanced treatment plans.</p>
+            </article>
+            <article class="service-card">
+              <div class="icon">🧠</div>
+              <h3>Neurology</h3>
+              <p>Expert neurology services for diagnosis, rehabilitation, and long-term support.</p>
+            </article>
+            <article class="service-card">
+              <div class="icon">👶</div>
+              <h3>Pediatrics</h3>
+              <p>Compassionate pediatric care for infants, children, and adolescents.</p>
+            </article>
+            <article class="service-card">
+              <div class="icon">🦴</div>
+              <h3>Orthopaedics</h3>
+              <p>Musculoskeletal treatment, trauma care, and surgical support for mobility recovery.</p>
+            </article>
+            <article class="service-card">
+              <div class="icon">🧪</div>
+              <h3>Diagnostics</h3>
+              <p>Modern imaging and laboratory services for fast and accurate diagnosis.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="doctors" class="section doctors">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Our doctors</p>
+            <h2>Meet our expert clinical team.</h2>
+          </div>
+
+          <div class="doctor-grid">
+            <article class="doctor-card">
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80" alt="Dr. Aisha Kapoor" />
+              <div class="doctor-info">
+                <h3>Dr. Aisha Kapoor</h3>
+                <span>Cardiologist</span>
+              </div>
+            </article>
+            <article class="doctor-card">
+              <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=900&q=80" alt="Dr. Rahul Mehta" />
+              <div class="doctor-info">
+                <h3>Dr. Rahul Mehta</h3>
+                <span>Neurologist</span>
+              </div>
+            </article>
+            <article class="doctor-card">
+              <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=900&q=80" alt="Dr. Nisha Verma" />
+              <div class="doctor-info">
+                <h3>Dr. Nisha Verma</h3>
+                <span>Pediatrician</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="appointments" class="section appointments">
+        <div class="container appointments-grid">
+          <div class="appointment-info">
+            <p class="eyebrow">Appointments</p>
+            <h2>Book a consultation with ease.</h2>
+            <ul>
+              <li>Same-day appointments available</li>
+              <li>Online scheduling and confirmation</li>
+              <li>Dedicated support for follow-up care</li>
+            </ul>
+          </div>
+
+          <div class="appointment-form">
+            <form id="appointmentForm" novalidate>
+              <div class="field-row">
+                <label>
+                  Full Name
+                  <input type="text" name="name" placeholder="Your full name" required />
+                </label>
+              </div>
+
+              <div class="field-row two-col">
+                <label>
+                  Email
+                  <input type="email" name="email" placeholder="your@email.com" required />
+                </label>
+                <label>
+                  Phone
+                  <input type="tel" name="phone" placeholder="Phone number" required />
+                </label>
+              </div>
+
+              <div class="field-row two-col">
+                <label>
+                  Department
+                  <select name="department" required>
+                    <option value="">Choose department</option>
+                    <option>General Medicine</option>
+                    <option>Cardiology</option>
+                    <option>Neurology</option>
+                    <option>Pediatrics</option>
+                    <option>Orthopaedics</option>
+                    <option>Diagnostics</option>
+                  </select>
+                </label>
+                <label>
+                  Date
+                  <input type="date" name="date" required />
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Confirm Appointment</button>
+              <p class="form-message" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section stats">
+        <div class="container stats-grid">
+          <div class="stat-card">
+            <strong>24/7</strong>
+            <span>Emergency care</span>
+          </div>
+          <div class="stat-card">
+            <strong>150+</strong>
+            <span>Medical staff</span>
+          </div>
+          <div class="stat-card">
+            <strong>18</strong>
+            <span>Specialized units</span>
+          </div>
+          <div class="stat-card">
+            <strong>12+</strong>
+            <span>Years of service</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand footer-brand">
+            <div class="brand-mark">+</div>
+            <div>
+              <span class="brand-name">CityCare</span>
+              <small>Hospital</small>
+            </div>
+          </div>
+          <p>Healthcare designed around your wellbeing.</p>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>+91 98765 43210</li>
+            <li>support@citycarehospital.com</li>
+            <li>12 Health Avenue, Bengaluru</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Hours</h4>
+          <ul>
+            <li>Emergency: 24/7</li>
+            <li>OPD: 9:00 AM – 8:00 PM</li>
+            <li>Diagnostics: Daily</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span>© <span id="year"></span> CityCare Hospital</span>
+      </div>
+    </footer>
+
+    <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
+
+    <script src="hospital-script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  SUPER_ADMIN
+  RECEPTIONIST
+  DOCTOR
+  NURSE
+  PHARMACIST
+  LAB_STAFF
+  PATIENT
+}
+
+model User {
+  id           String   @id @default(uuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         Role
+  department   String?
+  status       String   @default("active")
+  createdAt    DateTime @default(now())
+}
+
+model Patient {
+  id               String          @id @default(uuid())
+  patientId        String          @unique
+  name             String
+  dob              DateTime
+  gender           String
+  phone            String
+  email            String?
+  address          String
+  emergencyContact String
+  bloodGroup       String
+  allergies        String?
+  medicalHistory   String?
+  status           String          @default("active")
+  createdAt        DateTime        @default(now())
+  appointments     Appointment[]
+  bills            Bill[]
+  records          MedicalRecord[]
+}
+
+model Doctor {
+  id          String       @id @default(uuid())
+  name        String
+  specialty   String
+  department  String
+  userId      String?      @unique
+  available   Boolean      @default(true)
+  appointments Appointment[]
+}
+
+model Appointment {
+  id          String   @id @default(uuid())
+  patientId   String
+  doctorId    String
+  department  String
+  scheduledAt DateTime
+  status      String   @default("scheduled")
+  reason      String?
+  patient     Patient  @relation(fields: [patientId], references: [id])
+  doctor      Doctor   @relation(fields: [doctorId], references: [id])
+}
+
+model MedicalRecord {
+  id          String   @id @default(uuid())
+  patientId   String
+  doctorName  String
+  diagnosis   String
+  notes       String
+  prescription String?
+  createdAt   DateTime @default(now())
+  patient     Patient  @relation(fields: [patientId], references: [id])
+}
+
+model Bill {
+  id          String   @id @default(uuid())
+  patientId   String
+  amount      Float
+  status      String   @default("pending")
+  invoiceNo   String   @unique
+  createdAt   DateTime @default(now())
+  patient     Patient  @relation(fields: [patientId], references: [id])
+}
+
+model LabTest {
+  id          String   @id @default(uuid())
+  patientId   String
+  testName    String
+  status      String   @default("pending")
+  result      String?
+  requestedAt DateTime @default(now())
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  title     String
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
