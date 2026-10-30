@@ -23,17 +23,17 @@ const COURSE_LIBRARY = [
   'Product Management Foundations'
 ];
 
-function normalizeText(text = '') {
+export function normalizeText(text = '') {
   return text.toLowerCase().replace(/\s+/g, ' ').trim();
 }
 
-function extractSkills(text) {
+export function extractSkills(text) {
   const normalized = normalizeText(text);
   const found = TECH_SKILLS.filter((skill) => normalized.includes(skill));
   return [...new Set(found)];
 }
 
-function scoreResume(text) {
+export function scoreResume(text) {
   const skillCount = extractSkills(text).length;
   const qualitySignals = ['experience', 'leadership', 'project', 'analysis', 'team', 'managed', 'developed', 'implemented'];
   const signalMatches = qualitySignals.filter((signal) => normalizeText(text).includes(signal)).length;
@@ -41,32 +41,32 @@ function scoreResume(text) {
   return Math.max(58, Math.round(raw));
 }
 
-function buildSummary(text) {
+export function buildSummary(text) {
   const words = text.split(/\s+/).filter(Boolean);
   const preview = words.slice(0, 120).join(' ');
   return preview.length > 260 ? `${preview.slice(0, 260)}...` : preview;
 }
 
-function buildJobRecommendations(skills) {
+export function buildJobRecommendations(skills) {
   return JOB_LIBRARY.filter((job) => {
     const matchCount = job.keywords.filter((keyword) => skills.some((skill) => skill.includes(keyword) || keyword.includes(skill))).length;
     return matchCount > 0;
   }).map((job) => job.title);
 }
 
-function buildMissingSkills(skills) {
+export function buildMissingSkills(skills) {
   const preferred = ['javascript', 'react', 'sql', 'python', 'communication', 'project management'];
   return preferred.filter((skill) => !skills.includes(skill));
 }
 
-function buildLearningPlan(missingSkills) {
+export function buildLearningPlan(missingSkills) {
   const plan = missingSkills.length
     ? missingSkills.map((skill) => `${skill}: Complete at least 2 practical exercises and one project-based assessment.`)
     : ['No major gaps detected. Focus on advanced portfolio work and leadership case studies.'];
   return plan;
 }
 
-function buildImprovementTips(text) {
+export function buildImprovementTips(text) {
   const tips = [];
   const normalized = normalizeText(text);
 

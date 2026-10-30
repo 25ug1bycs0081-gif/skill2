@@ -58,6 +58,25 @@ npx prisma migrate dev --schema=server/prisma/schema.prisma --name init
 npm run dev -- --host 0.0.0.0
 ```
 
+## Tests
+
+Run the unit and property-based tests from the repository root:
+
+```bash
+npm test
+```
+
+To print Node's coverage report:
+
+```bash
+npm run test:coverage
+```
+
+The suite covers resume-analysis functions and properties, the resume portfolio
+component, hospital appointment-form behavior, mock-data relationships, and the
+hospital API's health, authentication, protected routes, dashboard, reports, and
+logout behavior.
+
 ## Environment variables
 
 Example values:
